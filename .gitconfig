@@ -1,0 +1,100 @@
+[user]
+    name = Le Van Nghia
+    email = nghialv2607@gmail.com
+
+[github]
+    user = nghialv
+
+[core]
+    ignorecase = false
+    editor = vim
+
+[color]
+    ui = auto
+    diff = auto
+    grep = auto
+    branch = auto
+    interactive = auto
+
+[grep]
+    lineNumber = true
+
+[push]
+    default = current
+
+[alias]
+    # Show all aliases 
+    alias = !git config --get-regexp '^alias\\.' | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort
+    
+    # Status and Show
+    s = status
+    ss = status -s
+    sh = show
+    
+    # Add and show status
+    a = !git add . && git status
+    au = !git add -u && git status
+    
+    # Commit
+    c = commit
+    cm = commit -m
+    
+    # Checkout
+    ch = checkout
+    chb = checkout -b
+    chm = checkout master
+    
+    # Branch
+    b = branch
+    ba = branch -a
+    bm = branch --merged
+    bn = branch --no-merged
+    
+    # Pull
+    pl = pull
+    plr = pull --rebase
+    plo = "!git pull origin $(git branch-name)"
+    plor = "!git pull origin --rebase $(git branch-name)"
+    
+    # Fetch
+    ft = fetch
+    
+    # Push
+    ph = push
+    pho = "!git push origin $(git branch-name)"
+
+    # Revert
+    rv = revert
+    rvh = rever HEAD
+
+    # Reset
+    rs = reset
+    rsh = reset --hard
+    rss = reset --soft
+    rshh = reset --hard HEAD
+    rssh = reset --soft HEAD
+
+    # Diff
+    d = diff
+    dm = diff master
+    d1 = diff HEAD~
+    d2 = diff HEAD~2
+
+    # Grep
+    gr = grep
+    grn = grep -n
+
+    # Stash
+    st = stash
+    stl = stash list
+    stp = stash pop
+    sts = stash save
+
+    # Log
+    ta = log --graph --branches --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset'
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+
+    # Other
+    refresh = !git fetch origin && git remote prune origin
+    f = "!git ls-files | grep -i"
+    branch-name = "!git rev-parse --abbrev-ref HEAD"

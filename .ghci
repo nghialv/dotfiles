@@ -1,0 +1,21 @@
+:set -XPackageImports
+
+import Control.Applicative
+import Control.Monad hiding ( forM, forM_, mapM, msum, sequence, sequence_ )
+import Data.Bool
+import Data.Either
+import Data.Foldable
+import Data.Function
+import Data.Maybe
+import Data.Monoid
+import Data.String
+import Data.Traversable
+import Data.Tuple
+import Data.Eq
+import Data.Ord
+import Data.Int
+
+:set prompt "λ: "
+
+-- show types
+:set +t
