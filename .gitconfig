@@ -65,7 +65,7 @@
 
     # Revert
     rv = revert
-    rvh = rever HEAD
+    rvh = revert HEAD
 
     # Reset
     rs = reset
@@ -93,6 +93,7 @@
     # Log
     ta = log --graph --branches --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset'
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    lo = log --oneline
 
     # Other
     refresh = !git fetch origin && git remote prune origin
