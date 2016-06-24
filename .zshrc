@@ -30,3 +30,6 @@ export PATH=$PATH:~/.local/bin
 if which swiftenv > /dev/null; then
     eval "$(swiftenv init -)";
 fi
+
+# Terraform
+export PATH=$PATH:/usr/local/terraform/bin:~/terraform
