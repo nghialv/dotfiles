@@ -35,6 +35,8 @@ Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'uarun/vim-protobuf', { 'for': 'proto' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
+Plug 'hashivim/vim-terraform'
+Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
 
