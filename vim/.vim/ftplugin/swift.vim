@@ -1,1 +1,1 @@
-colo molokai
+colo molokai_swift
