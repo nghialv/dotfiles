@@ -43,8 +43,8 @@ export PATH=$PATH:/usr/local/terraform/bin:~/terraform
 alias ccode='cd $CODE'
 alias cgo='cd $GOPATH'
 alias cops='cd $CODE/ops'
-alias cabema='cd $CODE/src/github.com/abema'
-alias cme='cd $CODE/src/github.com/nghialv'
+alias cabema='cd $GOPATH/src/github.com/abema'
+alias cme='cd $GOPATH/src/github.com/nghialv'
 
 # The next line updates PATH for the Google Cloud SDK.
 source $SDKS/google-cloud-sdk/path.zsh.inc
