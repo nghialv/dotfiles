@@ -104,16 +104,6 @@ if has('persistent_undo')
   set undodir=~/.vim/undodir/
 endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Colors and Fonts
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-syntax on
-set t_Co=256
-
-let g:rehash256 = 1
-set background=dark
-colo molokai
-
 " open help vertically
 command! -nargs=* -complete=help Help vertical belowright help <args>
 autocmd FileType help wincmd L
@@ -127,11 +117,14 @@ autocmd BufNewFile,BufRead *.vim setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 
-augroup filetypedetect
-  autocmd BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
-  autocmd BufNewFile,BufRead .nginx.conf*,nginx.conf* setf nginx
-augroup END
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colors and Fonts
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax on
+set t_Co=256
+let g:rehash256 = 1
+set background=dark
+colo molokai
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping 
