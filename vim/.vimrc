@@ -17,6 +17,9 @@ Plug 'scrooloose/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'godlygeek/tabular'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'SirVer/ultisnips'
+Plug 'mhinz/vim-startify'
 
 " Haskel
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
@@ -37,6 +40,7 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'hashivim/vim-terraform'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'andrewstuart/vim-kubernetes'
 
 call plug#end()
 
@@ -168,6 +172,8 @@ set si
 " Wrap lines
 set wrap
 
+set laststatus=2
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -192,8 +198,15 @@ map <Leader>s :SyntasticToggleMode<CR>
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+set statusline+=%F
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+
+" Jump to next error with Ctrl-n and previous error with Ctrl-p. Close the
+" quickfix window with <leader>a
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>

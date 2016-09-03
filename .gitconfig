@@ -1,5 +1,5 @@
 [user]
-    name = Le Van Nghia
+    name = nghialv
     email = nghialv2607@gmail.com
 
 [github]
@@ -8,6 +8,9 @@
 [core]
     ignorecase = false
     editor = vim
+
+[url "git@github.com:"]
+        insteadOf = https://github.com/
 
 [color]
     ui = auto
