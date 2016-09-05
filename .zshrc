@@ -18,8 +18,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Golang
 export GOPATH=$CODE/go
-export GO=/usr/local/Cellar/go16/1.6.3
-export PATH=$PATH:$GO/bin:$GOPATH/bin
+export PATH=$PATH:/usr/local/Cellar/go16/1.6.3/bin:$GOPATH/bin
 
 # Stack
 export PATH=$PATH:~/.local/bin
