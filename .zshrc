@@ -43,6 +43,7 @@ export PATH=$PATH:/usr/local/terraform/bin:~/terraform
 alias ccode='cd $CODE'
 alias cgo='cd $GOPATH'
 alias cops='cd $CODE/ops'
+alias cdocs='cd $CODE/docs'
 alias cabema='cd $GOPATH/src/github.com/abema'
 alias cme='cd $GOPATH/src/github.com/nghialv'
 
