@@ -41,7 +41,11 @@ export PATH=$PATH:/usr/local/terraform/bin:~/terraform
 # Alias
 alias ccode='cd $CODE'
 alias cgo='cd $GOPATH'
+alias chaskell='cd $CODE/haskell'
+alias cswift='cd $CODE/swift'
+alias crust='cd $CODE/rust'
 alias cops='cd $CODE/ops'
+alias cweb='cd $CODE/web'
 alias cdocs='cd $CODE/docs'
 alias cabema='cd $GOPATH/src/github.com/abema'
 alias cme='cd $GOPATH/src/github.com/nghialv'
@@ -53,3 +57,6 @@ source $SDKS/google-cloud-sdk/path.zsh.inc
 source $SDKS/google-cloud-sdk/completion.zsh.inc
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
