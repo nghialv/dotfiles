@@ -1,6 +1,8 @@
 #!/bin/sh
 
-DF=$HOME/dotfiles
+echo "This script must be run in dotfiles directory."
+
+DF=$PWD
 
 # Backup
 DFBK=$HOME/.dotfiles_backup
@@ -24,10 +26,10 @@ symlink(){
 }
 
 symlink_files() {
-    local -a FILES=$(find $DF -type f -maxdepth 1 -name ".*" ! -name .DS_Store ! -name .git ! -name .gitignore \
+    local -a FILES=$(find $DF -maxdepth 1 -name ".*" ! -name .DS_Store ! -name .git ! -name .gitignore \
         | sed "s/.*\/\(.*\)/\1/g")
 
-    FILES="$FILES vim/.vimrc"
+    #FILES="$FILES vim/.vimrc"
     
     for i in ${FILES[@]}; do
         sourceFile=$DF/$i
@@ -39,9 +41,6 @@ symlink_files() {
 
 # Symblink dotfiles
 symlink_files
-
-# Vim
-symlink $DF/vim/.vim $HOME/.vim
 
 # Stack
 symlink $DF/stack/config.yaml $HOME/.stack/config.yaml

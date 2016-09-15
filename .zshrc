@@ -11,13 +11,14 @@ export LANG=en_US.UTF-8
 export EDITOR=vim
 
 export CODE=$HOME/Documents/code
+export SRC=$CODE/src
 export SDKS=$HOME/Documents/sdks
 
 # PATH
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Golang
-export GOPATH=$CODE/go
+export GOPATH=$CODE
 export PATH=$PATH:/usr/local/Cellar/go16/1.6.3/bin:$GOPATH/bin
 
 # Stack
@@ -38,25 +39,16 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Terraform
 export PATH=$PATH:/usr/local/terraform/bin:~/terraform
 
-# Alias
-alias ccode='cd $CODE'
-alias cgo='cd $GOPATH'
-alias chaskell='cd $CODE/haskell'
-alias cswift='cd $CODE/swift'
-alias crust='cd $CODE/rust'
-alias cops='cd $CODE/ops'
-alias cweb='cd $CODE/web'
-alias cdocs='cd $CODE/docs'
-alias cabema='cd $GOPATH/src/github.com/abema'
-alias cme='cd $GOPATH/src/github.com/nghialv'
-
-# The next line updates PATH for the Google Cloud SDK.
+# The next line updates PATH for the Google Cloud SDK
 source $SDKS/google-cloud-sdk/path.zsh.inc
 
-# The next line enables shell command completion for gcloud.
+# The next line enables shell command completion for gcloud
 source $SDKS/google-cloud-sdk/completion.zsh.inc
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Source other scripts
+source ~/.zsh/lib/peco.zsh

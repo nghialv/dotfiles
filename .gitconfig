@@ -102,3 +102,7 @@
     refresh = !git fetch origin && git remote prune origin
     f = "!git ls-files | grep -i"
     branch-name = "!git rev-parse --abbrev-ref HEAD"
+
+# ghq config
+[ghq]
+    root = ~/Documents/code/src

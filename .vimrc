@@ -113,6 +113,7 @@ autocmd BufNewFile,BufRead *.ino setlocal noet ts=4 sw=4 sts=4
 autocmd BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
 autocmd BufNewFile,BufRead *.md setlocal noet ts=4 sw=4
 autocmd BufNewFile,BufRead *.vim setlocal expandtab shiftwidth=2 tabstop=2
+autocmd BufNewFile,BufRead *.zsh setlocal expandtab shiftwidth=2 tabstop=2
 
 autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
