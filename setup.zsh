@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "This script must be run in dotfiles directory."
+#echo "This script must be run in dotfiles directory."
 
 DF=$PWD
 
@@ -44,6 +44,9 @@ symlink_files
 
 # Stack
 symlink $DF/stack/config.yaml $HOME/.stack/config.yaml
+
+# Peco
+symlink $DF/.peco $HOME/.config/.peco
 
 source $HOME/.zshrc
 echo "DONE!"

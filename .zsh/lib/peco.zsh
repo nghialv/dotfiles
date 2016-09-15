@@ -39,7 +39,7 @@ stty -ixon
 bindkey '^s' peco-src
 
 # Open github page
-alias gho='hub browse $(ghq list | peco --prompt "[hub browse]" | cut -d "/" -f 4,5)'
+alias gho='hub browse $(ghq list | peco --prompt "[hub browse]" | cut -d "/" -f 2,3)'
 
 # Git ls-files
 function peco-find-file() {
