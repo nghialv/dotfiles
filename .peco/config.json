@@ -3,8 +3,8 @@
   "Keymap": {
     "C-c": "peco.Cancel",
     "C-d": "peco.EndOfFile",
+    "C-s": "peco.ToggleSelection",
     "C-v": "peco.ToggleRangeMode",
-    "M-d": "peco.DeleteForwardWord",
     "C-i,C-f": "peco.SelectNextPage",
     "C-i,C-b": "peco.SelectPreviousPage"
   },
