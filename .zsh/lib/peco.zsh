@@ -57,6 +57,16 @@ function peco-find-file() {
 zle -N peco-find-file
 bindkey '^q' peco-find-file
 
+# SSH
+function peco-ssh() {
+  local host=$(grep ^Host ~/.ssh/config | awk '{print $2}' | peco --prompt "[ssh]")
+
+  if [ -n "$host" ]; then
+    \ssh ${host}
+  fi
+}
+alias pssh="peco-ssh"
+
 # Docker peco
 function peco-docker-images() {
     local args="$@"
