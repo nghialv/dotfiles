@@ -48,14 +48,26 @@ function peco-find-file() {
     else
         source_files=$(find . -type f)
     fi
-    selected_files=$(echo $source_files | peco --prompt "[find file]")
-
-    BUFFER="${BUFFER}${echo $selected_files | tr '\n' ' '}"
+    selected_files=$(echo $source_files | peco --prompt "[find files]" | tr '\n' ' ')
+    
+    BUFFER="${BUFFER}${selected_files}"
     CURSOR=$#BUFFER
     zle redisplay
 }
 zle -N peco-find-file
 bindkey '^q' peco-find-file
+
+# Git diff files
+function peco-diff-files() {
+  source_files=$(git diff --name-status)
+  selected_files=$(echo $source_files | peco --prompt "[diff files]" | awk '{print $2}' | tr '\n' ' ')
+  
+  BUFFER="${BUFFER}${selected_files}"
+  CURSOR=$#BUFFER
+  zle redisplay
+}
+zle -N peco-diff-files
+bindkey '^d' peco-diff-files
 
 # SSH
 function peco-ssh() {
