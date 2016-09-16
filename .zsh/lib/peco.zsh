@@ -48,7 +48,7 @@ function peco-find-file() {
     else
         source_files=$(find . -type f)
     fi
-    selected_files=$(echo $source_files | peco --prompt "[find files]" | tr '\n' ' ')
+    local selected_files=$(echo $source_files | peco --prompt "[find files]" | tr '\n' ' ')
     
     BUFFER="${BUFFER}${selected_files}"
     CURSOR=$#BUFFER
@@ -59,8 +59,8 @@ bindkey '^q' peco-find-file
 
 # Git diff files
 function peco-diff-files() {
-  source_files=$(git diff --name-status)
-  selected_files=$(echo $source_files | peco --prompt "[diff files]" | awk '{print $2}' | tr '\n' ' ')
+  local source_files=$(git diff --name-status)
+  local selected_files=$(echo $source_files | peco --prompt "[diff files]" | awk '{print $2}' | tr '\n' ' ')
   
   BUFFER="${BUFFER}${selected_files}"
   CURSOR=$#BUFFER
@@ -68,6 +68,13 @@ function peco-diff-files() {
 }
 zle -N peco-diff-files
 bindkey '^d' peco-diff-files
+
+# Ag
+function peco-ag-vim(){
+  local query=$(echo $@ | tr ' ' '\n' | tail -1)
+  vim $(ag --ignore-dir=.git $@ | peco --prompt "[ag vim]" --query $query | awk -F : '{print "-c " $2 " " $1}')
+}
+alias agv="peco-ag-vim"
 
 # SSH
 function peco-ssh() {
@@ -83,26 +90,70 @@ alias pssh="peco-ssh"
 function peco-docker-images() {
     local args="$@"
 
-    docker images $args | awk 'NR > 1' | peco 2> /dev/null
+    docker images $args | awk 'NR > 1' | peco --prompt "[images]" 2> /dev/null
 }
+alias dimages="peco-docker-images"
 
+function peco-docker-push() {
 
-# Search a destination from cdr list
-function peco-get-destination-from-cdr() {
-	cdr -l | \
-	sed -e 's/^[[:digit:]]*[[:blank:]]*//' | \
-	peco --query "$LBUFFER"
 }
+alias dpush="peco-docker-push"
 
-# Search a destination from cdr list and cd the destination
-function peco-cdr() {
-	local destination="$(peco-get-destination-from-cdr)"
-	if [ -n "$destination"  ]; then
-		BUFFER="cd $destination"
-		zle accept-line
-	else
-		zle reset-prompt
-	fi
+function peco-docker-rmi() {
+  local arg="$1"
+  local images=$(peco-docker-images -a | awk '{print $3}')
+
+  for image in $images ; do
+    echo docker rmi $arg "$image"
+    docker rmi $arg "$image"
+  done
 }
-zle -N peco-cdr
-bindkey '^x' peco-cdr
+alias drmi="peco-docker-rmi"
+
+function peco-docker-ps() {
+  local args="$@"
+
+  docker ps $args | awk 'NR > 1' | peco 2> /dev/null 
+}
+alias dps="peco-docker-ps"
+
+function peco-docker-stop() {
+  local containers=$(peco-docker-ps | awk 'BEGIN{ORS=" "}{print $1}')
+
+  echo docker stop $containers
+  docker stop $containers
+}
+alias dstop="peco-docker-stop"
+
+function peco-docker-kill() {
+  local containers=$(peco-docker-ps | awk 'BEGIN{ORS=" "}{print $1}')
+
+  echo docker kill $containers
+  docker kill $containers
+}
+alias dkill="peco-docker-kill"
+
+function peco-docker-ps-stopped() {
+  local runnings=$(docker ps | awk 'NR > 1' | awk '{print $1}' | tr "\\n" "|")
+  runnings=${runnings%%?}
+
+  docker ps -a | awk 'NR > 1 && $1 !~ /^('"$runnings"')$/' | peco 2> /dev/null
+}
+alias dstopped="peco-docker-ps-stopped"
+
+function peco-docker-rm() {
+  local arg="$1"
+  local containers=""
+
+  if [ "$arg" = "-f" ] ; then
+    containers=$(peco-docker-ps -a | awk '{print $1}')
+  else 
+    containers=$(peco-docker-ps-stopped | awk '{print $1}')
+  fi
+
+  for container in $containers ; do
+    echo docker rm $arg "$container"
+    docker rm $arg "$container"
+  done
+}
+alias drm="peco-docker-rm"

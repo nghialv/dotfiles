@@ -25,7 +25,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
 Plug 't9md/vim-choosewin'
 Plug 'Shougo/neocomplete.vim'
-Plug 'mhinz/vim-startify'
 
 " Golang
 Plug 'fatih/vim-go'
