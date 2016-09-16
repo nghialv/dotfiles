@@ -48,10 +48,9 @@ source $SDKS/google-cloud-sdk/path.zsh.inc
 # The next line enables shell command completion for gcloud
 source $SDKS/google-cloud-sdk/completion.zsh.inc
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
+# Nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # Source other scripts
 source ~/.zsh/lib/peco.zsh

@@ -2,36 +2,66 @@
 - Plugin manager: [vim-plug](https://github.com/junegunn/vim-plug)
 - Plugins
     - Common
-        - [nerdtree](https://github.com/scrooloose/nerdtree)
-        - [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
-        - [syntastic](https://github.com/scrooloose/syntastic)
-        - [neocomplete](https://github.com/Shougo/neocomplete.vim)
-        - [supertab](https://github.com/ervandew/supertab)
-        - [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
-        - [tabular](https://github.com/godlygeek/tabular)
-        - [mirodark](https://github.com/djjcast/mirodark)
-        - [vimproc](https://github.com/Shougo/vimproc.vim)
-        
+	
+		```
+		Plug 'AndrewRadev/splitjoin.vim'
+		Plug 'Raimondi/delimitMate'
+		Plug 'ctrlpvim/ctrlp.vim'
+		Plug 'itchyny/lightline.vim'
+		Plug 'tomasr/molokai'
+		Plug 'tpope/vim-commentary'
+		Plug 'tpope/vim-fugitive'
+		Plug 'tpope/vim-repeat'
+		Plug 'tpope/vim-scriptease'
+		Plug 'ConradIrwin/vim-bracketed-paste'
+		Plug 'unblevable/quick-scope'
+		Plug 'scrooloose/nerdtree'
+		Plug 'SirVer/ultisnips'
+		Plug 't9md/vim-choosewin'
+		Plug 'Shougo/neocomplete.vim'
+		```
     - Haskell
-        - [neco-ghc](https://github.com/eagletmt/neco-ghc)
-        - [ghcmod-vim](https://github.com/eagletmt/ghcmod-vim)
-        - [haskell-vim](https://github.com/neovimhaskell/haskell-vim)
-        - [vim-hoogle](https://github.com/Twinside/vim-hoogle)
-        - [vim-haskellConcealPlus](https://github.com/enomsg/vim-haskellConcealPlus)
-        - colorscheme: [mirodark](https://github.com/djjcast/mirodark)(customized)
+		
+		```
+		Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+		Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+		Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+		Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
+		Plug 'enomsg/vim-haskellConcealPlus', { 'for': 'haskell' }
+		```
+        
+		- colorscheme: [mirodark](https://github.com/djjcast/mirodark)(customized)
 
     - Go
-        - [vim-go](https://github.com/fatih/vim-go)
+		
+		```
+		Plug 'fatih/vim-go'
+		Plug 'garyburd/go-explorer'
+		Plug 'corylanou/vim-present', {'for' : 'present'}
+		```
+
         - colorscheme: [molokai](https://github.com/tomasr/molokai)(customized)
 
     - Swift
-        - [swif.vim](https://github.com/keith/swift.vim)
+		
+		```
+		Plug 'keith/swift.vim', { 'for': 'swift' }
+		```
+
         - colorscheme: [molokai](https://github.com/tomasr/molokai)(customized)
         
     - Other
-        - [vim-protobuf](https://github.com/uarun/vim-protobuf)
-        - [vim-markdown](https://github.com/plasticboy/vim-markdown)
-        - [vim-yaml](https://github.com/stephpy/vim-yaml)
+
+		```
+		Plug 'uarun/vim-protobuf', { 'for': 'proto' }
+		Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+		Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
+		Plug 'hashivim/vim-terraform'
+		Plug 'andrewstuart/vim-kubernetes'
+		Plug 'elzr/vim-json', {'for' : 'json'}
+		Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
+		Plug 'fatih/vim-nginx' , {'for' : 'nginx'}
+		```
 
 ##### zsh
 - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
