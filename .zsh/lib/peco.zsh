@@ -70,7 +70,7 @@ zle -N peco-diff-files
 bindkey '^d' peco-diff-files
 
 # Ag
-function peco-ag-vim(){
+function peco-ag-vim() {
   local query=$(echo $@ | tr ' ' '\n' | tail -1)
   vim $(ag --ignore-dir=.git $@ | peco --prompt "[ag vim]" --query $query | awk -F : '{print "-c " $2 " " $1}')
 }
@@ -87,6 +87,15 @@ function peco-ssh() {
 alias pssh="peco-ssh"
 
 # Docker peco
+function peco-docker-search() {
+  local term="$1"
+
+  if ! [ -z "$term" ] ; then
+    docker search $term | awk 'NR > 1' | peco --prompt "[docker search]" 2> /dev/null 
+  fi
+}
+alias dsearch="peco-docker-search"
+
 function peco-docker-images() {
     local args="$@"
 
@@ -95,7 +104,12 @@ function peco-docker-images() {
 alias dimages="peco-docker-images"
 
 function peco-docker-push() {
+  local images=$(peco-docker-images | awk '{print $1, $2}' | tr " " ":")
 
+  for image in $images ; do
+    echo docker push "$image"
+    docker push "$image"
+  done
 }
 alias dpush="peco-docker-push"
 
@@ -113,9 +127,17 @@ alias drmi="peco-docker-rmi"
 function peco-docker-ps() {
   local args="$@"
 
-  docker ps $args | awk 'NR > 1' | peco 2> /dev/null 
+  docker ps $args | awk 'NR > 1' | peco --prompt "[docker ps]" 2> /dev/null 
 }
 alias dps="peco-docker-ps"
+
+function peco-docker-start() {
+  local containers=$(peco-docker-ps-stopped | awk 'BEGIN{ORS=" "}{print $1}')
+
+  echo docker start $containers
+  docker start $containers
+}
+alias dstart="peco-docker-start"
 
 function peco-docker-stop() {
   local containers=$(peco-docker-ps | awk 'BEGIN{ORS=" "}{print $1}')
@@ -137,7 +159,7 @@ function peco-docker-ps-stopped() {
   local runnings=$(docker ps | awk 'NR > 1' | awk '{print $1}' | tr "\\n" "|")
   runnings=${runnings%%?}
 
-  docker ps -a | awk 'NR > 1 && $1 !~ /^('"$runnings"')$/' | peco 2> /dev/null
+  docker ps -a | awk 'NR > 1 && $1 !~ /^('"$runnings"')$/' | peco --prompt "[docker]" 2> /dev/null
 }
 alias dstopped="peco-docker-ps-stopped"
 
