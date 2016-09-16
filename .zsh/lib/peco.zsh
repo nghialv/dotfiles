@@ -3,8 +3,8 @@ if ! which peco > /dev/null; then
   return
 fi
 
-alias B='`git branch | peco --prompt "[branch]" | sed -e "s/^\*[ ]*//g"`'
-alias P='| peco | xargs '
+# Select git branch
+alias -g B='`git branch | peco --prompt "[branch]" | sed -e "s/^\*[ ]*//g"`'
 
 # Search history
 function peco-select-history() {
