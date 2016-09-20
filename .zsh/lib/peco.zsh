@@ -72,7 +72,11 @@ bindkey '^d' peco-diff-files
 # Ag
 function peco-ag-vim() {
   local query=$(echo $@ | tr ' ' '\n' | tail -1)
-  vim $(ag --ignore-dir=.git $@ | peco --prompt "[ag vim]" --query $query | awk -F : '{print "-c " $2 " " $1}')
+  local selected_file="$(ag --ignore-dir=.git $@ | peco --prompt "[ag vim]" --query $query | awk -F : '{print "-c " $2 " " $1}')"
+
+  if [ -n "$selected_file" ] ; then
+    vim $(echo $selected_file)
+  fi
 }
 alias agv="peco-ag-vim"
 
