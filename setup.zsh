@@ -10,7 +10,7 @@ if [ ! -d $DFBK ]; then
     mkdir $DFBK
 fi
 
-symlink(){
+function symlink {
     local sourceFile=$1
     local targetFile=$2
 
@@ -25,11 +25,9 @@ symlink(){
     echo "linked $targetFile -> $sourceFile"
 }
 
-symlink_files() {
+function symlink_files {
     local -a FILES=$(find $DF -maxdepth 1 -name ".*" ! -name .DS_Store ! -name .git ! -name .gitignore \
         | sed "s/.*\/\(.*\)/\1/g")
-
-    #FILES="$FILES vim/.vimrc"
     
     for i in ${FILES[@]}; do
         sourceFile=$DF/$i

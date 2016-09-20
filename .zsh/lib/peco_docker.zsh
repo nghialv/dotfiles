@@ -1,5 +1,5 @@
 # Docker peco
-function peco-docker-search() {
+function peco-docker-search {
   local term="$1"
 
   if ! [ -z "$term" ] ; then
@@ -8,14 +8,14 @@ function peco-docker-search() {
 }
 alias dsearch="peco-docker-search"
 
-function peco-docker-images() {
+function peco-docker-images {
     local args="$@"
 
     docker images $args | awk 'NR > 1' | peco --prompt "[images]" 2> /dev/null
 }
 alias dimages="peco-docker-images"
 
-function peco-docker-push() {
+function peco-docker-push {
   local images=$(peco-docker-images | awk '{print $1, $2}' | tr " " ":")
 
   for image in $images ; do
@@ -25,7 +25,7 @@ function peco-docker-push() {
 }
 alias dpush="peco-docker-push"
 
-function peco-docker-rmi() {
+function peco-docker-rmi {
   local arg="$1"
   local images=$(peco-docker-images -a | awk '{print $3}')
 
@@ -36,14 +36,14 @@ function peco-docker-rmi() {
 }
 alias drmi="peco-docker-rmi"
 
-function peco-docker-ps() {
+function peco-docker-ps {
   local args="$@"
 
   docker ps $args | awk 'NR > 1' | peco --prompt "[docker ps]" 2> /dev/null 
 }
 alias dps="peco-docker-ps"
 
-function peco-docker-start() {
+function peco-docker-start {
   local containers=$(peco-docker-ps-stopped | awk 'BEGIN{ORS=" "}{print $1}')
 
   echo docker start $containers
@@ -51,7 +51,7 @@ function peco-docker-start() {
 }
 alias dstart="peco-docker-start"
 
-function peco-docker-stop() {
+function peco-docker-stop {
   local containers=$(peco-docker-ps | awk 'BEGIN{ORS=" "}{print $1}')
 
   echo docker stop $containers
@@ -59,7 +59,7 @@ function peco-docker-stop() {
 }
 alias dstop="peco-docker-stop"
 
-function peco-docker-kill() {
+function peco-docker-kill {
   local containers=$(peco-docker-ps | awk 'BEGIN{ORS=" "}{print $1}')
 
   echo docker kill $containers
@@ -67,7 +67,7 @@ function peco-docker-kill() {
 }
 alias dkill="peco-docker-kill"
 
-function peco-docker-ps-stopped() {
+function peco-docker-ps-stopped {
   local runnings=$(docker ps | awk 'NR > 1' | awk '{print $1}' | tr "\\n" "|")
   runnings=${runnings%%?}
 
@@ -75,7 +75,7 @@ function peco-docker-ps-stopped() {
 }
 alias dstopped="peco-docker-ps-stopped"
 
-function peco-docker-rm() {
+function peco-docker-rm {
   local arg="$1"
   local containers=""
 

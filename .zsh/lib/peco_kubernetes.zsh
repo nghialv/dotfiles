@@ -1,5 +1,5 @@
 # Get pod
-function peco-kubernetes-get-pod() {
+function peco-kubernetes-get-pod {
   local pod=$(kubectl get pods | peco --prompt "[pods]" | awk '{print $1}')
 
   BUFFER="${BUFFER}${pod}"
@@ -11,7 +11,7 @@ bindkey '^p' peco-kubernetes-get-pod
 
 # Port forward
 
-function peco-kubernetes-port-forward() {
+function peco-kubernetes-port-forward {
   local port="$1"
 
   if [ -z "$port" ] ; then
