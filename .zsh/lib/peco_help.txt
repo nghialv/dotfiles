@@ -139,4 +139,16 @@ peco 	dkill - kill a running container
 peco 	dstopped - list stopped containers
 peco 	rm - remove one or more containers
 
+# Terminal
+terminal 	Ctrl+b - move back one character
+terminal 	Ctrl+f - move forward one character
+terminal 	Ctrl+d - delete the character under the cursor
 
+terminal	Meta-b - move back one word
+terminal 	Meta-f - move forward one word
+terminal 	Meta+d - delete from current cursor to the start of next word
+terminal	Ctrl+w - delete from the cursor to the previous whitespace
+
+terminal 	Ctrl+a - move to the start of the line
+terminal 	Ctrl+e - move to the end of the line
+terminal 	Ctrl+k - delete from current cursor to the end of the line
