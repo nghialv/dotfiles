@@ -1,0 +1,142 @@
+# Cursor movement
+vim		h - move cursor left
+vim		j - move cursor down
+vim		k - move cursor up
+vim 	l - move cursor right
+vim		w - jump forwards to the start of a word
+vim		W - jump forwards to the start of a word (words can contain puntuation)
+vim		e - jump forwards to the end of a word
+vim		E - jump forwards to the end of a word (words can contain puntuation)
+vim		b - jump backwards to the start of a word
+vim		B - jump backwards to the start of a word (words can contain puntuation)
+vim		0 - jump to the start of line
+vim		^ - jump to the first non-blank character of the line
+vim		$ - jump to the end of the line
+vim	    g_ - jump to the last non-blank character of the line
+vim		gg - go to the first line of the document
+vim		G - go to the last line of the document
+vim 	5G - go to line 5
+vim		fx - jump to next occurrence of character x in current line
+vim		tx - jump to before next occurence of character x in current line
+vim		} - jump to next paragraph (or function/block)
+vim		{ - jump to previous paragraph (or function/block)
+
+# Insert mode - inserting/appending text
+vim		i - insert before cursor
+vim		I - insert at the begining of the line
+vim		a - insert (append) after the cursor
+vim		A - insert (append) at the end of the line
+vim		o - append (open) a new line below the current line
+vim		O - append (open) a new line before the current line
+vim		ea - insert (append) at the end of the word
+
+# Editing
+vim		r - replace a single character
+vim		J - join line below to the current one
+vim		cc - change (replace) entire line
+vim		cw - change (replace) to the end of the word
+vim		c$ - change (replace) to the end of the line
+vim		s - delete character and substitute text
+vim		S - delete line and substitute text (same as cc)
+vim		xp - transpose two letters (delete and paste)
+vim		u - undo
+vim		Ctrl + r - redo
+vim		. - repeat last command
+
+# Marking text (visual mode)
+vim 	v - start visual mode, mark lines, then do a command (like y-yank)
+vim		V - start linewise visual mode
+vim		o - move to other end of marked area
+vim		Ctrl + v - start visual block mode
+vim		O - move to other corner of block
+vim		aw - mark a work
+vim		ab - mark a block with ()
+vim 	aB - mark a block with {}
+vim		ib - mark inner block with ()
+vim		iB - mark inner block with {}
+
+# Visual commands
+vim		> - shift text right
+vim		< - shift text left
+vim 	y - yank(copy) marked text
+vim		d - delete marked text
+vim		~ - switch case
+
+# Marks
+vim		:marks - list of marks
+vim		ma - set current position for mark A
+vim		`a - jump to position of mark A
+vim		y`a - yank text to position of mark A
+
+# Cut and paste
+vim 	yy - yank (copy) a line
+vim 	2yy - yank (copy) 2 lines
+vim		yw - yank (copy) the characters of the word from the cursor position to the start of next word
+vim		y$ - yank (copy) to the end of line
+vim		p - put (paste) the clipboard after cursor
+vim		P - put (paste) befor cursor
+vim		dd - delete (cut) a line
+vim		2dd - delete (cut) 2 lines
+vim		dw - delete (cut) the characters of the word from the cursor position to the start of the next word
+vim		D - delete (cut) to the end of the line
+vim		d$ - delete (cut) to the end of the line
+vim 	x - delete (cut) character
+
+# Search and replace
+vim		/pattern - search for pattern
+vim		?pattern - search backword for pattern
+vim		n - repeat search in same direction
+vim		N - repeat search in opposite direction
+vim		:%s/old/new/g - replace all old with new throughout file
+vim		:%s/old/new/gc - replace all old with new throughout file with confirmations
+vim		:noh - remove highlighting of search matches
+
+# Search in multiple files
+vim		:vimgrep /pattern/ {file} - search for pattern in multiple files (eg. :vimgrep /foo/ **/*)
+vim 	:cn - jump to the next match
+vim 	:cp - jump to the previous match
+vim 	:copen - open a window containing the list of matches
+
+#Working with multiple files
+vim     Ctrl + f - show full path of current file
+vim 	:bn - go to the next buffer
+vim 	:bp - go to the previous buffer
+vim 	:ls - list all open buffers
+vim 	Ctrl + ws - split window
+vim 	Ctrl + wv - split window vertically
+
+# Ag
+ag 		agv - show ag result by peco and open the selected file by vim
+ag 		--hidden - search hidden files. This option obeys ignored files.
+ag 		--ignore PATTERN - ignore files/directories whose names match this pattern.
+ag 		--ignore-dir NAME - ignore directory
+
+# Peco
+peco 	Ctrl + s - toggle selection
+peco 	Ctrl + v - toogle range selection
+peco	Ctrl-i + Ctrl-f - jump to next page
+peco 	Ctrl-i + Ctrl-b - jump to previous page
+peco 	Ctrl + r - query zsh history
+peco 	Ctrl + s - query ghq list
+peco 	Ctrl + q - find files from current directory by git ls-files
+peco 	Ctrl + d - diff a file
+peco 	B - git branch
+peco 	pk - kill processes
+peco 	gho - open github page
+peco 	pssh - ssh to a host
+
+peco 	Ctrl + p - get list of kubernetes pods
+peco 	kpf - port forward a pod
+
+peco 	dsearch - search in docker hub
+peco 	dimages - list images
+peco 	dpush - push one or more images to docker hub
+peco 	drmi - remove one or more images
+peco 	dps - list containers
+peco 	dstart - start a stopped container
+peco 	dstop - stop a running container
+peco 	dkill - kill a running container
+peco 	dstopped - list stopped containers
+peco 	rm - remove one or more containers
+
+

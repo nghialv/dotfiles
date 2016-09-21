@@ -90,6 +90,14 @@ function peco-ssh {
 }
 alias pssh="peco-ssh"
 
+# Help
+function peco-help {
+  cat ~/.zsh/lib/peco_help.txt | peco --prompt "[peco help]"
+  zle redisplay
+}
+zle -N peco-help
+bindkey '^h' peco-help
+
 # Source files
 source ~/.zsh/lib/peco_docker.zsh
 source ~/.zsh/lib/peco_kubernetes.zsh
