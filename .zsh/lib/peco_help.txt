@@ -90,6 +90,7 @@ vim		N - repeat search in opposite direction
 vim		:%s/old/new/g - replace all old with new throughout file
 vim		:%s/old/new/gc - replace all old with new throughout file with confirmations
 vim		:noh - remove highlighting of search matches
+vim 	, space - remove search highlight
 
 # Search in multiple files
 vim		:vimgrep /pattern/ {file} - search for pattern in multiple files (eg. :vimgrep /foo/ **/*)
@@ -104,6 +105,30 @@ vim 	:bp - go to the previous buffer
 vim 	:ls - list all open buffers
 vim 	Ctrl + ws - split window
 vim 	Ctrl + wv - split window vertically
+
+# Commentary
+vim 	gcc - comment out a line
+vim 	gc - comment out a line in visual mode
+vim 	gcap - comment out a paragraph
+vim 	:7,15Commentary - comment a range
+
+# Quick scope
+vim 	f - quick scope
+vim 	F - quick scope
+vim 	t - quick scope
+vim 	T - quick scope
+
+# Quick fix
+vim 	C-n - next
+vim 	C-m - previous
+vim 	,a - close
+
+# Fugitive
+vim 	,gb - git blame
+
+# CtrlP
+vim 	C-b - search file in current directory
+vim 	C-j, C-k - navigate the result list
 
 # Ag
 ag 		agv - show ag result by peco and open the selected file by vim
