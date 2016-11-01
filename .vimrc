@@ -47,9 +47,10 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'hashivim/vim-terraform'
 Plug 'andrewstuart/vim-kubernetes'
-Plug 'elzr/vim-json', {'for' : 'json'}
-Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
-Plug 'fatih/vim-nginx' , {'for' : 'nginx'}
+Plug 'elzr/vim-json', {'for': 'json'}
+Plug 'ekalinin/Dockerfile.vim', {'for': 'Dockerfile'}
+Plug 'fatih/vim-nginx', {'for': 'nginx'}
+Plug 'kylef/apiblueprint.vim', {'for': 'apiblueprint'} 
 
 call plug#end()
 
