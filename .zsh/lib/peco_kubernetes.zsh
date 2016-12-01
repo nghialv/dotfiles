@@ -20,7 +20,7 @@ function peco-kubernetes-port-forward {
   fi
 
   local ports="$port"
-  if [ $port =~ "^[0-9]+$" ] ; then
+  if [[ $port =~ "^[0-9]+$" ]] ; then
     ports="${port}:${port}"
   fi
 
