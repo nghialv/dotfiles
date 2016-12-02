@@ -24,7 +24,7 @@ Plug 'unblevable/quick-scope'
 Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
 Plug 't9md/vim-choosewin'
-Plug 'Shougo/neocomplete.vim'
+Plug 'maralla/completor.vim'
 
 " Golang
 Plug 'fatih/vim-go'
@@ -404,21 +404,13 @@ noremap <Leader>f :NERDTreeFind<cr>
 
 let NERDTreeShowHidden=1
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NeoComplete
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+" ==================== Completor ====================
+let g:completor_go_omni_trigger = '(?:\b[^\W\d]\w*|[\]\)])\.(?:[^\W\d]\w*)?'
+let g:completor_min_chars = 2
 
-if !exists('g:neocomplete#sources')
-  let g:neocomplete#sources = {}
-endif
-let g:neocomplete#sources._ = ['buffer', 'member', 'tag', 'file', 'dictionary']
-let g:neocomplete#sources.go = ['omni']
-
-" Disable sorting
-call neocomplete#custom#source('_', 'sorters', [])
+let g:completor_disable_filename = 1
+let g:completor_disable_buffer = 1
+let g:completor_disable_ultisnips = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips
