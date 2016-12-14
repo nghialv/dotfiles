@@ -22,7 +22,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Golang
 export GOPATH=$CODE
-export PATH=$PATH:/usr/local/Cellar/go/1.7.3/bin:$GOPATH/bin
+export PATH=$PATH:/usr/local/Cellar/go/1.6.3/bin:$GOPATH/bin
 
 # Stack
 export PATH=$PATH:~/.local/bin
@@ -60,3 +60,5 @@ alias vim="/usr/local/Cellar/vim/8.0.0066/bin/vim"
 function jcurl() {
   curl "$@" | python -m json.tool | pygmentize -l json
 }
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -25,6 +25,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
 Plug 't9md/vim-choosewin'
 Plug 'maralla/completor.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Golang
 Plug 'fatih/vim-go'
@@ -400,11 +401,18 @@ endfunction
 " NerdTree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <Leader>n :NERDTreeToggle<cr>
-noremap <Leader>f :NERDTreeFind<cr>
 
 let NERDTreeShowHidden=1
 
-" ==================== Completor ====================
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FZF
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+noremap <Leader>f :FZF<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Completor
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:completor_go_omni_trigger = '(?:\b[^\W\d]\w*|[\]\)])\.(?:[^\W\d]\w*)?'
 let g:completor_min_chars = 2
 
