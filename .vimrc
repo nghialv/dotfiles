@@ -25,7 +25,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
 Plug 't9md/vim-choosewin'
 Plug 'maralla/completor.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Golang
 Plug 'fatih/vim-go'
