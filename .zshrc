@@ -55,8 +55,6 @@ export NVM_DIR="$HOME/.nvm"
 # Source other scripts
 source ~/.zsh/lib/peco.zsh
 
-alias vim="/usr/local/Cellar/vim/8.0.0066/bin/vim"
-
 function jcurl() {
   curl "$@" | python -m json.tool | pygmentize -l json
 }
