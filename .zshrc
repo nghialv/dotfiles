@@ -22,7 +22,8 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Golang
 export GOPATH=$CODE
-export PATH=$PATH:/usr/local/Cellar/go/1.6.3/bin:$GOPATH/bin
+export GOROOT=/usr/local/go1.7.5
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # Stack
 export PATH=$PATH:~/.local/bin
