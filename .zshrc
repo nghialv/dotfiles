@@ -60,4 +60,10 @@ function jcurl() {
   curl "$@" | python -m json.tool | pygmentize -l json
 }
 
+# Make pet able to capture the previous command
+function prev() {
+  PREV=$(fc -lrn | head -n 1)
+  sh -c "pet new `printf %q "$PREV"`"
+}
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -1,0 +1,3 @@
+[[snippets]]
+  description = "watch the list of pods"
+  command = "watch -n 1 'kubectl get pods | grep pod-name'"
