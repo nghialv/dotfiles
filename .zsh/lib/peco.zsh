@@ -7,13 +7,13 @@ fi
 alias -g B='`git branch | peco --prompt "[branch]" | sed -e "s/^\*[ ]*//g"`'
 
 # Search history
-function peco-select-history {
-  BUFFER=$(fc -l -r -n 1 | peco --prompt "[zsh history]" --query "$LBUFFER")
-  CURSOR=$#BUFFER
-  zle redisplay
-}
-zle -N peco-select-history
-bindkey '^r' peco-select-history
+# function peco-select-history {
+#   BUFFER=$(fc -l -r -n 1 | peco --prompt "[zsh history]" --query "$LBUFFER")
+#   CURSOR=$#BUFFER
+#   zle redisplay
+# }
+# zle -N peco-select-history
+# bindkey '^r' peco-select-history
 
 # Kill a processes
 function peco-pkill {

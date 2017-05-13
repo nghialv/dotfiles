@@ -3,6 +3,8 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 source $ZSH/oh-my-zsh.sh
 
+export PS1="🐳  $PS1"
+
 autoload -U compinit
 compinit -u
 
@@ -67,3 +69,4 @@ function prev() {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/.zsh/lib/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
