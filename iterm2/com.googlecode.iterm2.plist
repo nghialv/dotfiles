@@ -57,7 +57,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>932 37 445 77 0 0 1680 1027 </string>
+	<string>857 200 445 77 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>248 748 400 129 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -65,7 +65,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 456 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>544 192 918 498 0 0 1680 1027 </string>
+	<string>355 299 918 498 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 4 1680 1023 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -609,7 +609,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Menlo-Regular 13</string>
+			<string>Menlo-Regular 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -681,7 +681,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>E001553F-961A-4C8E-9D54-272EE4330408</string>
 	<key>NoSyncLastTipTime</key>
-	<real>516294784.69711298</real>
+	<real>516554823.81780899</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -738,7 +738,12 @@
 		<string>0046</string>
 		<string>0047</string>
 		<string>0048</string>
+		<string>0049</string>
+		<string>0050</string>
+		<string>0051</string>
 	</array>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -774,6 +779,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/a13705/Documents/code/src/github.com/nghialv/dotfiles/iterm2</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -783,7 +790,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-05-13T04:15:17Z</date>
+	<date>2017-05-15T06:50:45Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>

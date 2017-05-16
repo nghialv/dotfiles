@@ -69,4 +69,21 @@ function prev() {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 source ~/.zsh/lib/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/lib/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# Enable vi mode
+bindkey -v
+
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
+
+export KEYTIMEOUT=1
+
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
