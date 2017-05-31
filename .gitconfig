@@ -8,6 +8,7 @@
 [core]
     ignorecase = false
     editor = vim
+	excludesfile = ~/.gitignore_global
 
 [url "git@github.com:"]
         insteadOf = https://github.com/
