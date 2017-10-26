@@ -24,7 +24,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Golang
 export GOPATH=$CODE
-export GOROOT=/usr/local/go1.7.5
+export GOROOT=/usr/local/go1.9.2
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # Stack
@@ -44,6 +44,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # Terraform
 export PATH=$PATH:/usr/local/terraform/bin:~/terraform
+
+# Istio
+export PATH=$PATH:~/.istio
 
 # The next line updates PATH for the Google Cloud SDK
 source $SDKS/google-cloud-sdk/path.zsh.inc
