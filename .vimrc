@@ -24,7 +24,8 @@ Plug 'unblevable/quick-scope'
 Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
 Plug 't9md/vim-choosewin'
-Plug 'maralla/completor.vim'
+"Plug 'maralla/completor.vim'
+Plug 'godlygeek/tabular'
 
 " Golang
 Plug 'fatih/vim-go'
@@ -414,12 +415,12 @@ noremap <Leader>f :FZF<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Completor
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-let g:completor_go_omni_trigger = '(?:\b[^\W\d]\w*|[\]\)])\.(?:[^\W\d]\w*)?'
-let g:completor_min_chars = 2
+"let g:completor_go_omni_trigger = '(?:\b[^\W\d]\w*|[\]\)])\.(?:[^\W\d]\w*)?'
+"let g:completor_min_chars = 2
 
-let g:completor_disable_filename = 1
-let g:completor_disable_buffer = 1
-let g:completor_disable_ultisnips = 1
+"let g:completor_disable_filename = 1
+"let g:completor_disable_buffer = 1
+"let g:completor_disable_ultisnips = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips
@@ -471,3 +472,11 @@ nmap  -  <Plug>(choosewin)
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 autocmd BufWritePre * %s/\s\+$//e
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tabular
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
