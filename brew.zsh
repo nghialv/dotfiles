@@ -2,6 +2,7 @@
 
 brew install tree
 brew install watch
-brew install knqyf263/pet/pet
+brew install the_silver_searcher
+brew install peco
 
 echo "DONE!"
