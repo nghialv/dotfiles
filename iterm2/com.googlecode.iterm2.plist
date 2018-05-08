@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AllowClipboardAccess</key>
+	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
 	<key>AppleScrollAnimationEnabled</key>
@@ -10,6 +12,8 @@
 	<integer>1</integer>
 	<key>AppleWindowTabbingMode</key>
 	<string>manual</string>
+	<key>CopySelection</key>
+	<true/>
 	<key>Default Bookmark Guid</key>
 	<string>FB1B0114-7858-4E01-B904-97CAE87F56A7</string>
 	<key>DimBackgroundWindows</key>
@@ -56,7 +60,7 @@
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>325 365 918 512 0 0 1680 1027 </string>
+	<string>163 109 796 473 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -662,7 +666,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>2</integer>
+			<integer>0</integer>
 			<key>Working Directory</key>
 			<string>/Users/a13705</string>
 		</dict>
@@ -671,12 +675,30 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>9E273322-679B-4C12-9527-651540E17F69</string>
+	<key>NoSyncLastTipTime</key>
+	<real>540869085.46582901</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>539186804.01238704</real>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+		<string>0000</string>
+		<string>0001</string>
+		<string>0002</string>
+		<string>0003</string>
+		<string>0004</string>
+		<string>0005</string>
+		<string>0006</string>
+		<string>0007</string>
+		<string>0008</string>
+		<string>0009</string>
+	</array>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PointerActions</key>
@@ -725,7 +747,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-02-01T14:45:45Z</date>
+	<date>2018-02-21T05:09:39Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
@@ -734,6 +756,8 @@
 	<true/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
 	<string>3.1.5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
