@@ -53,6 +53,7 @@ Plug 'ekalinin/Dockerfile.vim', {'for': 'Dockerfile'}
 Plug 'fatih/vim-nginx', {'for': 'nginx'}
 Plug 'kylef/apiblueprint.vim', {'for': 'apiblueprint'} 
 Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
+Plug 'google/vim-jsonnet', {'for': 'jsonnet'}
 
 call plug#end()
 
